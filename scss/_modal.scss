@@ -1,0 +1,68 @@
+$modal-vertical-space: 40px;
+.backdrop{
+	@include position(fixed, 0);
+	background-color: rgba($body-font-color, 0.7);
+	z-index: 1000;
+
+	a.close{
+		font-size: rem-calc(40);
+		font-weight:100;
+		color: lighten($body-font-color, 80%);
+
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		@include transform(scaleY(0.7));
+		z-index: 1000;
+		@media #{$large-up}{
+			right: 11%;
+		}
+	}
+
+	h2{
+		font-family: $body-font-family;
+		color: $body-font-color;
+		font-size: rem-calc(16px);
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.top{
+		margin-top: $modal-vertical-space;
+		margin-bottom: $modal-vertical-space;
+	}
+	h3{
+		color: $body-font-color;
+		font-size: rem-calc(14px);
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: $modal-vertical-space;
+		&.no-space{
+			margin-bottom: auto;
+		}
+	}
+	p{
+		color: lighten($body-font-color, 10%);
+		font-size: rem-calc(12px);
+	}
+	input{
+
+		border: 1px solid lighten($body-font-color, 80%);
+		
+		&:focus{
+			box-shadow: none;
+			border: 1px solid $body-font-color;
+		}
+	}
+}
+
+.backdrop-content{
+	display: block;
+	@include position(absolute, 10px);
+	@media #{$large-up}{
+		@include position(absolute, 10px 10%);
+	}
+	background-color: $body-bg;
+	color: $body-font-color;
+
+	overflow-y: scroll;
+}

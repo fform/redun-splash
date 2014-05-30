@@ -1,0 +1,54 @@
+
+$foot-social-height: 100px;
+
+@mixin socialRoll(){
+	display:block;
+	&:hover{
+		opacity: 0.5;
+	}
+}
+.social-fb{
+	@include sprite-socialfb();
+	@include socialRoll();
+}
+.social-twitter{
+	@include sprite-socialtwitter();
+	@include socialRoll();
+}
+.social-insta{
+	@include sprite-socialinsta();
+	@include socialRoll();
+}
+.social-vimeo{
+	@include sprite-socialvimeo();
+	@include socialRoll();
+}
+
+.footer{
+	position: relative;
+	min-height:$foot-social-height;
+}
+
+.big-footer{
+	background-color: rgba(1,1,1,0.8);
+	position: absolute;
+	bottom: 0;
+	left:0;
+	right:0;
+	height: $foot-social-height;
+	line-height:110px;
+	text-align:center;
+	
+	.row{
+		display:table;
+		height:100%;
+	}
+	.columns{
+		display:table-cell;
+		vertical-align: middle;
+	}
+	ul{
+		margin: auto;
+		display:inline-block;
+	}
+}

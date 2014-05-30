@@ -1,0 +1,17 @@
+.DS_Store
+
+/bower_components/
+
+/node_modules/
+
+/scss/.sass-cache/
+
+/.sass-cache/
+
+/scss/_sprites.scss
+
+/source/
+
+public/*
+!public/humans.txt
+!public/robots.txt

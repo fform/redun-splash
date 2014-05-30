@@ -1,0 +1,9 @@
+{
+	"name": "Redun",
+	"dependencies": {
+		"foundation": "zurb/bower-foundation",
+		"jquery": "~1.11.0",
+		"underscore": "~1.6.0",
+		"slick-carousel": "~1.3.5"
+	}
+}
