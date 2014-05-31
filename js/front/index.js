@@ -1,76 +1,73 @@
 App.extend('index', (function (w, $) {
-	var _resizeList = [];
+	var _$model,
+		_$container;
+
+	var _profiles = [{
+		n: "Bella - Re/Juventate",
+		d: "Student, model, photographer"
+	}, {
+		n: "Chow - Re/Molding",
+		d: "Artist."
+	}, {
+		n: "Cynthia - Re/Bloomed",
+		d: "Mother, Creative Director, Founder of Masion Mittweg."
+	}, {
+		n: "Anastasia - Re/Generate",
+		d: "Mode, Photographer, Russian."
+	}, {
+		n: "Tatiana - Re/Create",
+		d: "Student and Model."
+	}, {}];
 	var plugin = {
 		init: function () {
-			if ($(w).scrollTop() === 0) {
-				w.scrollTo(0, 0);
+			_$model = $(".model");
+			_$container = $(".split.r");
+			var l = _profiles.length;
+			var pick = Math.floor(Math.random() * l);
+			var index = (pick + 1);
+			var forceFade = setTimeout(function () {
+				_$model.fadeIn();
+				onResize();
+			}, 1200);
+			_$model.hide().attr('src', 'assets/img/models/' + index + '.jpg').on('load', function () {
+				clearTimeout(forceFade);
+				onResize();
+				$(this).fadeIn();
+			});
+
+
+			var profileHtml = "";
+			if (_profiles[pick].n) {
+				profileHtml = "<h1>Individual N&ordm;: 00" + index + "</h1>" +
+					"<h3>" + _profiles[pick].n + "</h3>" +
+					"<p>" + _profiles[pick].d + "</p>";
 			}
-			_resizeList = $(".fullImage, .full-bg-image");
-			$("a.menu").on('click', function () {
-				$(".nav").toggleClass('expanded');
-			});
-			$(".nav a").on('click', function (e) {
-				$(".nav").removeClass('expanded');
+			$(".profile").hide().html(profileHtml).fadeIn();
 
-				//e.stopImmediatePropagation();
-				var hash = $(this).attr("href").replace('#', '');
-				if (hash) {
-					$dest = $("a[name='" + hash + "']");
-					if ($dest.length) {
-						e.preventDefault();
-						$(document.body).animate({
-							scrollTop: $dest.offset().top - 100
-						});
-						document.location.hash = '#' + hash;
-					}
 
-				}
-			});
-
-			$('.getStarted').on('click', function () {
-				App.fn.quiz.start();
-			});
-
-			resizeWindow();
-			$(w).on('resize', resizeWindow);
-
-			$("#collection").slick({
-
-			});
+			$(w).on('resize', onResize);
+			onResize();
 		}
 	};
 
-	var resizeWindow = function () {
-		$(_resizeList).each(function (i, e) {
-			var $el = $(e);
-			var $p = $el.parent();
+	var onResize = function () {
+		var w = _$container.width(),
+			h = _$container.height(),
+			mw = _$model.width(),
+			mh = _$model.height();
 
-			var esize = {
-				w: $el.width(),
-				h: $el.height(),
-				pw: $p.width(),
-				ph: $p.height()
-			};
-			var config = {};
-			if (esize.w > esize.h) {
-				config = {
-					'background-size': esize.w + 'px auto'
-				};
-			} else {
-				config = {
-					'background-size': 'auto ' + esize.h + 'px'
-				};
-			}
-			if ($el.hasClass('half')) {
-				config['background-position-x'] = ($el.hasClass('half-left') ? 0 : esize.pw / 2) + 'px';
-				config['background-position-y'] = 'inherit';
-			}
-			$el.css(config);
-			if ($el.hasClass('full-bg-image')) {
-				$p.height($('img', $el).height());
-			}
 
-		});
+		if (window.innerWidth < 600) {
+			_$model.css({
+				'position': 'fixed',
+				'height': h
+			});
+		} else {
+			_$model.css({
+				'position': 'absolute',
+				'height': h
+			});
+		}
 	};
 
 	return plugin;

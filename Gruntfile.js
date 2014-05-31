@@ -70,8 +70,8 @@ module.exports = function (grunt) {
 						'bower_components/jquery.cookie/jquery.cookie.js',
 						'bower_components/jquery-placeholder/jquery.placeholder.min.js',
 
-						'bower_components/modernizr/modernizr.js',
-						'bower_components/underscore/underscore.js',
+						//'bower_components/modernizr/modernizr.js',
+						//'bower_components/underscore/underscore.js',
 						'bower_components/fastclick/lib/fastclick.js',
 						//'bower_components/slick-carousel/slick/slick.min.js',
 
@@ -125,7 +125,7 @@ module.exports = function (grunt) {
 		imagemin: {
 			dist: {
 				options: {
-					//optimizationLevel: 3
+					optimizationLevel: 3
 				},
 				files: [{
 					expand: true,
@@ -176,9 +176,9 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('images', ['clean:images', 'imagemin', 'sprite']);
 	grunt.registerTask('code', ['clean:code', 'sass', 'uglify']);
-	grunt.registerTask('vendor', ['clean:vendor', 'copy']);
 
-	grunt.registerTask('all', ['images', 'code', 'vendor', 'watch']);
+
+	grunt.registerTask('all', ['images', 'code', 'watch']);
 
 	grunt.registerTask('default', ['code', 'watch']);
 };

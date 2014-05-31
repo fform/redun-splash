@@ -1,31 +1,14 @@
 @charset "UTF-8";
 
+@import "normalize";
+@import "bourbon";
+
 @import "config";
 
 @import "sprites";
-@import "normalize";
-@import "foundation/functions";
-@import "bourbon";
 
-@import "slick";
 
-@import
-  "foundation/components/alert-boxes",
-  "foundation/components/button-groups",
-  "foundation/components/buttons",
-  "foundation/components/clearing",
-  "foundation/components/flex-video",
-  "foundation/components/forms",
-  "foundation/components/grid",
-  "foundation/components/inline-lists",
-  "foundation/components/labels",
-  "foundation/components/sub-nav",
-  "foundation/components/tooltips",
-  "foundation/components/top-bar",
-  "foundation/components/type",
-  "foundation/components/visibility";
-
-@import "global-layout",
+@import "global",
         "header",
         "footer",
         "nav",

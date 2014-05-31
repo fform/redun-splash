@@ -1,11 +1,10 @@
 /* AUTHORS */
 
-   Design:	2014 Ricky Chan		(object-matter.com)		@onlvier
-Front End:	2014 Will Froelich	(donttrustrobots.com)	@fform
- Back End:	2014 ...
+   Design:	2014 Ricky Chan		(object-matter.com)			@onlvier
+Front End:	2014 Will Froelich	(donttrustrobots.com)		@fform
 
 /* SITE STRUCTURE */
 
   Standards: HTML5, CSS3
-  Components: jQuery, SCSS, Compass, Foundation, Modernizr
+  Components: jQuery, SCSS, Bourbon
   Software: Sublime Text 3, Grunt

@@ -1,6 +1,6 @@
-$body-bg: #FFF;
-$body-font-color: #0d0d0d;
-$body-font-color-light: lighten($body-font-color, 70%);
+$body-bg: #fafbf8;
+$body-font-color: #020202;
+$body-font-color-light: #aeaeac;//lighten($body-font-color, 60%);
 $primary-color: #494B4E;
 $secondary-color: #d4d4d4;
 $alert-color: #BC405B;
@@ -10,23 +10,30 @@ $info-color: #e6e3da;
 $selected-color: #158EC6;
 $global-radius: 3px;
 
-$body-font-family: "proxima-nova",sans-serif;
-$serif-font: "adobe-garamond-pro","Times","Times New Roman", times, serif;
+$body-font-family: "proxima-nova", $helvetica;
+$body-font-family-condensed: "proxima-nova-alt-ext-cond", $helvetica;
+$serif-font: "adobe-garamond-pro", $georgia;
 
-$default-letter-spacing: rem-calc(3);
+$default-letter-spacing: em(3px);
 
-$nav-height: 100px;
-$mobile-nav-height: 80px;
-$mobile-nav-link-height: rem-calc(45);
-
+$input-height: em(60px);
 
 /**
- * Foundation
+ * Media
  */
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range,1);
+}
 
-@import "foundation/functions";
-$row-width: rem-calc(1000);
-$total-columns: 12;
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
 
 $small-range: (0em, 40em);
 $medium-range: (40.063em, 64em);
@@ -54,11 +61,4 @@ $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max
 
 $xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})";
 $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
-
-
-$form-spacing: rem-calc(16);
-$form-label-line-height: 1.5;
-$input-font-size: rem-calc(14);
-$input-border-color: #DFDFDF;
-$input-border-radius: $global-radius;
 

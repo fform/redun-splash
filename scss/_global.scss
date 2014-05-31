@@ -1,0 +1,71 @@
+body{
+	background-color: $body-bg;
+	color:$body-font-color;
+	font-family: $body-font-family;
+	font-size:16px;
+	line-height: em(24px);
+}
+a{
+	@include transition(all 200ms ease);
+}
+
+h1{
+	font-size:em(14px);
+	font-weight:400;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+h2{
+	font-family:$serif-font;
+	font-weight:200;
+	color: $body-font-color-light;
+}
+h3{
+	text-transform: uppercase;
+	font-family:$body-font-family-condensed;
+	font-size:em(38px);
+	margin-top:em(10px);
+	margin-bottom:em(10px);
+}
+
+p{
+	font-family:$serif-font;
+	color: $body-font-color-light;
+	font-size:em(15px);
+}
+
+hr{
+	margin-top:50px;
+	margin-bottom:50px;
+	border:0;
+	border-top:1px solid #aeaeac;
+}
+
+input{
+	border-radius:0;
+	@include appearance(none);
+	height: $input-height;
+	text-indent: em(20px);
+	outline: none;
+	border:1px solid #aeaeac;
+	letter-spacing: 3px;
+	padding:0;
+	margin:0;
+	&:focus{
+		border:1px solid #656565;
+	}
+}
+
+ul.inline{
+	@include inline-block;
+	margin:0;
+	padding:0;
+	li{
+		display:block;
+		float:left;
+		margin-right:40px;
+		&:last-child{
+			margin-right:0;
+		}
+	}
+}

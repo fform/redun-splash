@@ -1,155 +1,178 @@
-
-$img-hero-top: image-url("big/inventory-magazine-2013-fall-winter-editorial.jpg");
-
-
-.home-top{
-	background-image: $img-hero-top;
-}
-.home-bottom{
-	&>img{
-		width:	 100%;
-		margin-left: -44%;
-		min-width: 180%;
-	}
-	@media #{$small-only}{
-		height: 400px !important;
-		min-height: 0 !important;
-	}
+.redun{
+	@include position(fixed, 0);
 }
 
-
-.club-price{
-	position:relative;
-	span{
-		position: absolute;
-		left:0;
+.logo{
+	width: 300px;
+	max-width:100%;
+}
+.split{
+	position: absolute;
+	top: 0;
+	bottom:0;
+	width:50%;
+	&.r{
+		overflow: hidden;
+		z-index:100;
 		right:0;
-		top:50%;
-		margin-top:  rem-calc(-20);
-		text-align:center;
-		font-size: rem-calc(40);
-		letter-spacing: $default-letter-spacing;
-		//text-indent: rem-calc(-20);
-		font-weight: bold;
-	}
-}
-
-.club-what{
-	hr,h5{
-		display:inline-block;
-		font-family: $serif-font;
-		font-size: rem-calc(14);
-		line-height:  rem-calc(14);
-		@media #{$medium-down}{
-			font-size: rem-calc(10);
-			line-height:  rem-calc(10);
+		img{
+			position: absolute;
+			left: 0;
+			top:0;
 		}
 	}
-	hr{
-		width:20%;
-		position: relative;
-		top:rem-calc(16);
-	}
-	h5{
-		width:40%;
-		margin: 0 10px;
-		font-style: italic;
-	}
-	p{
-		padding: 10% 10%;
-		color: lighten($body-font-color, 40%);
-	}
-	@media #{$small-only}{
+	&.l{
+		z-index:200;
+		left:0;
 	}
 }
 
-.featured-list{
-	text-align:center;
-	li{
-		margin-left: rem-calc(15);
-		margin-right: rem-calc(15);
-		display:inline-block;
-		list-style: none;
-	}
-	li:first{
-		margin-left:0;
-	}
-	li:last{
-		margin-right:0;
-	}
-}
-.attack-of-the-show{
-	@include sprite-attackoftheshow();
-}
-.g4{
-	@include sprite-g4();
-}
-.los-angeles-times{
-	@include sprite-losangelestimes();
-}
-.mashable{
-	@include sprite-mashable();
-}
-.panodaily{
-	@include sprite-panodaily();
-}
-.techcrunch{
-	@include sprite-techcrunch();
-}
-.thrillist{
-	@include sprite-thrillist();
-}
-.time{
-	@include sprite-time();
-}
-
-
-
-.half{
-	position: relative;
-	display:block;
-	float:left;
-	width: 50%;
-	height: 400px;
-}
-
-@media #{$small-only}{
-	.half{
-		width: auto;
-		height: 300px;
-		float:none;
-	}
-}
-
-
-.row-collection{
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-#collection{
-	//width: 100%;
-	position: absolute;
-	left:0;
+.splash{
+	width:80%;
+	position:absolute;
+	top:10%;
+	bottom:0;
+	overflow: auto;
 	right:0;
-	.slide{
-		width: 100%;
+}
+.signup{
+	margin-top:40px;
+	margin-bottom:40px;
+	@include inline-block();
+	width:100%;
+	input,.post{
+		width:49%;
+		display:block;
+		float:left;
 	}
-	.half{
-		height: auto;
+	.post{
+		@include transition(all 200ms ease);
+		background-color: $body-font-color;
+		border:1px solid $body-font-color;
+		&:hover{
+			background-color: lighten($body-font-color,30%);
+		}
+		a{
+			margin:0;
+			margin-left:auto;
+			margin-right:auto;
+
+			color: $body-bg;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight:400;
+			
+			
+			display:block;
+			height:$input-height;
+			line-height: $input-height;
+
+		}
 	}
 }
-.full{
-	overflow:hidden;
-	img{
-		max-height:853px;
-		max-width: 853px;
-		height: 100%;
+
+$social-size: em(26px);
+.social{
+	margin-top:20px;
+	margin-bottom:40px;
+	line-height: $social-size;
+	span{
+		display:block;
+		float:left;
+		margin-right:em(20px);
+		text-transform: uppercase;
+		letter-spacing:em(3px);
+		font-size:em(13px);
+
+	}
+	li{
+		
+		font-size:$social-size;
+		a,
+		a:link,
+		a:visited{
+			@include transition(all 200ms ease);
+			color: $body-font-color-light;
+			&:hover{
+				color: $body-font-color;
+			}
+		}
+	}
+}
+
+@media #{$medium-down}{
+	.signup{
+		input{
+			width:40%;
+			text-indent: em(8px);
+		}
+		.post{
+			width:58%;
+		}
+	}
+}
+@media #{$small-only}{
+	p,
+	h2,
+	h1{
+		color: $body-font-color;
+	}
+	h1{
+		font-size:em(10px);
+	}
+	h2{
+		font-size:em(14px);
+	}
+	.redun{
+		@include position(absolute, 0);
+	}
+	
+	.logo{
 		width:100%;
 	}
-}
-
-@media #{$small-only}{
-	#collection{
-		height: 400px;
+	.splash{
+		left:10%;
+		right:10%;
+		bottom: inherit;
+		position:absolute;
+		overflow:auto;
+		-webkit-overflow-scrolling:touch;
+		overflow-x:none;
+	}
+	.signup{
+		input,
+		.post{
+			width:100%;
+		}
+	}
+	.social{
+		li{
+			font-size: ($social-size * 0.8);
+			a, a:link, a:visited{
+				color: $body-font-color;
+				&:hover{
+					color: $body-font-color-light;
+				}
+			}
+		}
+	}
+	.profile{
+		display:none;
+		opacity: 0;
+	}
+	.split{
+		&.l{
+			right:0;
+			width:auto;
+		}
+		&.r{
+			left:0;
+			width:auto;
+			position: fixed;
+			img{
+				opacity: 0.35;
+			}
+		}
 	}
 }
