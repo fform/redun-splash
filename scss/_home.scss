@@ -1,5 +1,5 @@
 .redun{
-	@include position(fixed, 0);
+	//@include position(fixed, 0);
 }
 
 .logo{
@@ -15,6 +15,7 @@
 		overflow: hidden;
 		z-index:100;
 		right:0;
+		position:fixed;
 		img{
 			position: absolute;
 			left: 0;
@@ -29,15 +30,13 @@
 
 .splash{
 	width:80%;
-	position:absolute;
-	top:10%;
-	bottom:0;
-	overflow: auto;
-	right:0;
+	position:relative;
+	margin-top:10%;
+	float:right;
 }
 .signup{
-	margin-top:40px;
-	margin-bottom:40px;
+	margin-top:10px;
+	margin-bottom:10px;
 	@include inline-block();
 	width:100%;
 	input,.post{
@@ -102,6 +101,9 @@ $social-size: em(26px);
 }
 
 @media #{$medium-down}{
+	.splash{
+		margin-top:20%;
+	}
 	.signup{
 		input{
 			width:40%;
@@ -132,18 +134,19 @@ $social-size: em(26px);
 		width:100%;
 	}
 	.splash{
-		left:10%;
-		right:10%;
-		bottom: inherit;
-		position:absolute;
-		overflow:auto;
-		-webkit-overflow-scrolling:touch;
-		overflow-x:none;
+		float:none;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:5%;
+		width:80%;
 	}
 	.signup{
 		input,
 		.post{
 			width:100%;
+		}
+		input{
+			border-bottom:none;
 		}
 	}
 	.social{

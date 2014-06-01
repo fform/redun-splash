@@ -10,10 +10,10 @@ App.extend('index', (function (w, $) {
 		d: "Artist."
 	}, {
 		n: "Cynthia - Re/Bloomed",
-		d: "Mother, Creative Director, Founder of Masion Mittweg."
+		d: "Mother, creative director, founder of maisonmittweg.com"
 	}, {
 		n: "Anastasia - Re/Generate",
-		d: "Mode, Photographer, Russian."
+		d: "Model, photographer, Russian."
 	}, {
 		n: "Tatiana - Re/Create",
 		d: "Student and Model."
