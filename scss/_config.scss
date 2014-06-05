@@ -1,9 +1,9 @@
 $body-bg: #fafbf8;
 $body-font-color: #020202;
-$body-font-color-light: #aeaeac;//lighten($body-font-color, 60%);
+$body-font-color-light: #6c6c6c;//lighten($body-font-color, 60%);
 $primary-color: #494B4E;
 $secondary-color: #d4d4d4;
-$alert-color: #BC405B;
+$alert-color: #db0016;
 $success-color: #52BC42;
 $warning-color: #F06F54;
 $info-color: #e6e3da;
@@ -14,9 +14,9 @@ $body-font-family: "proxima-nova", $helvetica;
 $body-font-family-condensed: "proxima-nova-alt-ext-cond", $helvetica;
 $serif-font: "adobe-garamond-pro", $georgia;
 
-$default-letter-spacing: em(3px);
+$default-letter-spacing: em(4px);
 
-$input-height: em(60px);
+$input-height: 60px;
 
 /**
  * Media

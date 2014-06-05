@@ -13,19 +13,19 @@ h1{
 	font-size:em(14px);
 	font-weight:400;
 	text-transform: uppercase;
-	letter-spacing: 4px;
+	letter-spacing: $default-letter-spacing;
 }
 h2{
 	font-family:$serif-font;
 	font-weight:200;
 	color: $body-font-color-light;
+	font-size:em(16px);
 	margin-top:10px;
-	margin-bottom:10px;
 }
 h3{
 	text-transform: uppercase;
 	font-family:$body-font-family-condensed;
-	font-size:em(38px);
+	font-size:em(34px);
 	line-height:em(16px);
 	margin-top:10px;
 	margin-bottom:10px;
@@ -34,20 +34,21 @@ h3{
 p{
 	font-family:$serif-font;
 	color: $body-font-color-light;
-	font-size:em(15px);
 }
 
 hr{
-	margin-top:20px;
-	margin-bottom:20px;
+	margin-top:40px;
+	margin-bottom:40px;
 	border:0;
 	border-top:1px solid #aeaeac;
 }
 
 input{
+	display:block;
 	border-radius:0;
 	@include appearance(none);
 	height: $input-height;
+	line-height: $input-height;
 	text-indent: em(20px);
 	outline: none;
 	border:1px solid #aeaeac;

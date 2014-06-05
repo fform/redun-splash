@@ -1,9 +1,11 @@
-if (!console) {
-	window.conosle = {
-		log: function () {},
-		warn: function () {},
-		error: function () {}
-	};
+if (!window.console) {
+	try {
+		window.console = {
+			log: function () {},
+			warn: function () {},
+			error: function () {}
+		};
+	} catch (e) {}
 }
 var App = window.App = {
 	"env": "",

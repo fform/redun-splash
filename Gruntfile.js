@@ -85,9 +85,8 @@ module.exports = function (grunt) {
 					sourceMap: true,
 				},
 				files: [{
-					'public/assets/js/boot.min.js': 'js/boot.js'
-				}, {
-					'public/assets/js/front.min.js': 'js/front**/*.js'
+					dest: 'public/assets/js/frontend.js',
+					src: ['js/*.js', 'js/**/*.js']
 				}]
 			}
 		},
